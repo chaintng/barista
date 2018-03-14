@@ -1,0 +1,33 @@
+{
+  "name": "barista-bot",
+  "engines": {
+    "node": ">=8"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@line/bot-sdk": "^5.2.0",
+    "comma-number": "^2.0.0",
+    "commander": "^2.14.1",
+    "debug": "^3.1.0",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "imgur-node-api": "^0.1.0",
+    "memory-cache": "^0.2.0",
+    "pageres": "^4.5.1",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "crypto-js": "^3.1.9-1"
+  }
+}

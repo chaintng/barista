@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Dream Cafe</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="/socket.io.js"></script>
+    <style>
+        .parent-tile {
+            transition: all 1s ease;
+        }
+
+        .parent-tile.brewed {
+            transform: scaleY(0);
+            opacity: 0;
+            min-height: 0px;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <section class="hero is-primary is-success is-bold">
+            <div class="hero-body">
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="container">
+                            <h1 class="title">
+                                My Dream Coffee Shop
+                            </h1>
+                            <h2 class="subtitle">
+                                Barista Section
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <div class="level-item has-text-centered">
+                            <div>
+                                <p class="heading">Customers</p>
+                                <p class="title">{{ currentCustomer }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">Last Order</h1>
+                <div class="tile is-vertical is-ancestor">
+                    <div v-for="item in items" class="parent-tile tile is-parent" v-bind:data-uid="item.uid" v-bind:data-orderNumber="item.orderNumber">
+                        <article class="tile is-child box">
+                            <div class="columns">
+                                <div class="column is-2 has-text-centered">
+                                    <button class="button is-success" onclick="brewed(event)">BREWED</button>
+                                </div>
+                                <div class="column">
+                                    <p class="title">#{{item.orderNumber}}: {{ item.name }}</p>
+                                    <p class="subtitle">Quantity: 1 <i style="color:#888">(Order at: {{ item.time }})</i></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="/first-page-vue.js"></script>
+</html>
