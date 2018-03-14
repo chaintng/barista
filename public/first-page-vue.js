@@ -7,11 +7,21 @@ var app = new Vue({
         orderNumber: 1,
         name: "AMERICANO",
         uid: "abc",
-        time: moment().fromNow()
+        orderTime: moment(),
+        humanTime: moment().fromNow()
       }
     ]
   }
 })
+
+setInterval(() => {
+  app.items = app.items.map(function (item) {
+    if (item) {
+      item.humanTime = item.orderTime.fromNow()
+    }
+    return item
+  })
+}, 1000);
 
 var socket = io('http://127.0.0.1:5001');
 
@@ -23,7 +33,8 @@ socket.on('order', function(data){
     orderNumber: data.orderNumber,
     name: data.product,
     uid: data.uid,
-    time: moment().fromNow()
+    orderTime: moment(),
+    humanTime: moment().fromNow()
   })
 });
 socket.on('currentCustomer', function(data){
