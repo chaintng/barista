@@ -3,13 +3,13 @@ var app = new Vue({
   data: {
     currentCustomer: 1,
     items: [
-      {
-        orderNumber: 1,
-        name: "AMERICANO",
-        uid: "abc",
-        orderTime: moment(),
-        humanTime: moment().fromNow()
-      }
+      // {
+      //   orderNumber: 0,
+      //   name: "AMERICANO",
+      //   uid: "abc",
+      //   orderTime: moment(),
+      //   humanTime: moment().fromNow()
+      // }
     ]
   }
 })

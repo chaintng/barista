@@ -1,7 +1,7 @@
-# Panda Crypto Bot
+# Barista
 
 ## Overview
-This is LINE bot for checking cryptocurrency price.
+Barista Shop
 
 ## How to start
 1. `cp .env-template .env`
