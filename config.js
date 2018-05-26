@@ -5,7 +5,7 @@ const config = {
   richMenuPage2Id: process.env.RICH_MENU_PAGE_2_ID,
   loadingMenuPage1Id: process.env.LOADING_MENU_PAGE_1_ID,
   loadingMenuPage2Id: process.env.LOADING_MENU_PAGE_2_ID,
-  verify: false
-}
+  verify: false,
+};
 
 module.exports = config;

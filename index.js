@@ -1,12 +1,12 @@
-require('dotenv').config()
-require("./lib/socket-io");
+require('dotenv').config();
+require('./lib/socket-io');
 
 const path = require('path');
-const express = require('express')
-const line = require('@line/bot-sdk')
+const express = require('express');
+const line = require('@line/bot-sdk');
 
-const handler = require('./handler')
-const config = require('./config.js')
+const handler = require('./handler');
+const config = require('./config.js');
 
 const app = express();
 
@@ -16,8 +16,8 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/barista', (req, res, next) => {
-  res.render("barista");
+app.get('/barista', (req, res) => {
+  res.render('barista');
 });
 app.post('/webhook', line.middleware(config), handler.webhook);
 
